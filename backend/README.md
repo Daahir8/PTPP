@@ -2,23 +2,37 @@
 
 ## Environment Variables
 
-Create a `.env` file in the backend directory with the following variables:
+The `.env` file has been created. You need to update it with your Gmail credentials:
 
 ```env
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-CONTACT_EMAIL=Daaahir8@gmail.com
+SMTP_USER=your-gmail@gmail.com          # ← Replace with your Gmail address
+SMTP_PASS=your-app-password              # ← Replace with Gmail App Password
+CONTACT_EMAIL=Daahir.ibraahim89@gmail.com  # ← Already set correctly
 PORT=5000
 ```
 
-## Gmail Setup
+## Gmail Setup (REQUIRED)
 
-To use Gmail SMTP, you need to:
-1. Enable 2-Step Verification on your Google account
-2. Generate an App Password: https://myaccount.google.com/apppasswords
-3. Use the App Password as `SMTP_PASS`
+To send emails, you MUST configure Gmail:
+
+1. **Enable 2-Step Verification** on your Google account:
+   - Go to: https://myaccount.google.com/security
+   - Enable 2-Step Verification if not already enabled
+
+2. **Generate an App Password**:
+   - Go to: https://myaccount.google.com/apppasswords
+   - Select "Mail" and "Other (Custom name)" → Enter "E-Salax Web"
+   - Copy the 16-character password generated
+
+3. **Update `.env` file**:
+   - Open `backend/.env`
+   - Replace `SMTP_USER` with your Gmail address
+   - Replace `SMTP_PASS` with the App Password you just generated
+   - Save the file
+
+4. **Restart the backend server** for changes to take effect
 
 ## Running
 
